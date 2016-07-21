@@ -87,3 +87,10 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# FB Archive files
+html/*
+photos/*
+videos/*
+index.htm
+messages.htm
