@@ -4,6 +4,9 @@ from os import path
 from wordcloud import WordCloud
 from colorama import init
 init()
+import nltk
+nltk.download("stopwords")
+from nltk.corpus import stopwords
 
 f = open('messages.htm', 'r')
 soup = BeautifulSoup(f, 'html.parser')
@@ -25,8 +28,9 @@ for ps in thing2:
     val = ' '.join(ps.stripped_strings)
     random_var.append(val)
 
-final_str = " ".join(random_var).encode('utf-8').strip()
-#print(final_str)
+filtered_words = [word for word in random_var if word not in stopwords.words('english')]
+
+final_str = " ".join(filtered_words).encode('utf-8').strip()
 
 ftwo = open('out.txt', 'w')
 ftwo.write(final_str)
