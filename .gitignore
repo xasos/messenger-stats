@@ -94,3 +94,6 @@ photos/*
 videos/*
 index.htm
 messages.htm
+
+# Output files
+.output.txt
