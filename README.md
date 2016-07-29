@@ -1,4 +1,4 @@
-# messenger-wordcloud
+# messenger-stats
 messenger-wordcloud was inspired by [fb-chat-wordcloud](https://github.com/jpnelson/fb-chat-wordcloud), a Java library to generate wordclouds from FB Messenger messages.
 
 ## Setup
