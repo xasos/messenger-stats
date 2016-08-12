@@ -9,6 +9,7 @@ nltk.download("stopwords")
 from nltk.corpus import stopwords
 #import matplotlib.pyplot as plt
 import re
+import operator
 
 raw_messages = open('messages.htm', 'r')
 soup = BeautifulSoup(raw_messages, 'html.parser')
@@ -31,17 +32,34 @@ filtered_words = [word for word in random_var if word not in stopwords.words('en
 
 final_str = " ".join(filtered_words).encode('utf-8').strip()
 
+#people = []
+people = {}
 for thread in soup.find_all("div", class_="thread"):
     soup = BeautifulSoup(str(thread), 'html.parser')
     message_count = len(soup.find_all("p"))
     p = re.compile('.*"thread">(.*)')
-    print("Thread: ")
-    print(p.match(str(thread)).group(1))
-    print("# of messages:")
-    print(message_count)
-    print("% of all messages:")
-    print(str(float(message_count)/len(messages)))
+    #print("Thread: ")
+    #print(p.match(str(thread)).group(1))
+    #print("# of messages:")
+    #print(message_count)
+    #print("% of all messages:")
+    #print(str(float(message_count)/len(messages) * 100))
+    thread_name = {}
+    #wordz = thread.encode('utf-8')
+    val = p.match(str(thread)).group(1)
+    print(val)
+    #thread_name["participants"] = val.decode('utf8')
+    thread_name["messages"] = message_count
+    thread_name["message_percent"] = str(float(message_count)/len(messages) * 100)
+    #people.append(thread_name)
+    #if hasattr(people, val.decode('utf8')):
+    #    thread_name["messages"] = message_count + people[val.decode('utf8')].messages
 
+    people[val.decode('utf8')] = thread_name
+
+print(people)
+new_dict = people.sort(key=operator.itemgetter('messages'))
+print(new_dict)
 
 ftwo = open('out.txt', 'w')
 ftwo.write(final_str)
