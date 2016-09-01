@@ -9,7 +9,7 @@ messenger-stats was inspired by [fb-chat-wordcloud](https://github.com/jpnelson/
 ## Setup
  - Navigate to [Download Your Information](https://www.facebook.com/dyi) on Facebook. Click on "Download a copy of your Facebook data."
 ![Facebook DYI Screenshot](screenshots/dyi.png)
- - After FB emails you a link to a zip file, unzip the archive, and copy `html/messages.htm` into the root directory of this cloned repo (an example file is provided in [`examples/`](examples/).
+ - After FB emails you a link to a zip file, unzip the archive, and copy `html/messages.htm` into the root directory of this cloned repo (an example `messages.htm` file is provided in [`examples/`](examples/)).
  - Then, run `python app.py` and voilà! A wordcloud and stats will be generated from your messages (the entire process may take a few minutes).
 
 ## Example Output
