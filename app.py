@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import ipdb
 from os import path
-from wordcloud import WordCloud
+#from wordcloud import WordCloud
 from colorama import init, Fore, Back, Style
 init()
 import nltk
@@ -58,7 +58,7 @@ for thread in soup.find_all("div", class_="thread"):
     people[val.decode('utf8')] = thread_name
 
 print(people)
-new_dict = people.sort(key=operator.itemgetter('messages'))
+new_dict = people.sort(key=itemgetter('messages'))
 print(new_dict)
 
 ftwo = open('out.txt', 'w')
