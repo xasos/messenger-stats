@@ -1,4 +1,4 @@
-# messenger-stats
+# messenger-stats [WIP]
 messenger-stats was inspired by [fb-chat-wordcloud](https://github.com/jpnelson/fb-chat-wordcloud), a Java library to generate wordclouds from FB Messenger messages. This library is extended a bit further to calculate:
  - # of threads
  - # of messages
